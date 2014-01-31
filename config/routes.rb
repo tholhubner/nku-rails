@@ -4,7 +4,8 @@ NkuRails::Application.routes.draw do
     resources :comments
   end
   
-  resources :buellers
+  ## route for the Bueller Student Application
+  resources :students
   
   root to: 'welcome#index'
 end
