@@ -4,7 +4,7 @@ NkuRails::Application.routes.draw do
     resources :comments
   end
   
-  resources :bueller
+  resources :buellers
   
   root to: 'welcome#index'
 end
