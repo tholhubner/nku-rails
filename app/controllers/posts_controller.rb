@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   
+  def edit
+    @post = Post.find(params[:id])
+  end
+  
   def index
     @post = Post.all
   end
