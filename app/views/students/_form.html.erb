@@ -1,0 +1,17 @@
+<%= form_for @student do |f| %>
+  <p>
+    <%= f.label :name, 'Name' %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :nickname, 'Nickname' %><br>
+    <%= f.text_field :nickname %><br>
+    <%= f.label :email, 'Email' %><br>
+    <%= f.text_field :email %><br>
+    <%= f.label :image_url, 'Image URL' %><br>
+    <%= f.text_field :image_url %><br>
+    <%= f.label :password, 'Password' %><br>
+    <%= f.password_field :password %><br>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

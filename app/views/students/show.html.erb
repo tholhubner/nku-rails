@@ -1,0 +1,11 @@
+<!-- Tyler Holhubner - NKU - Spring 2014 -->
+<!-- Page to display the individual student based upon the specific ID -->
+
+<h1><%= @student.name %></h1>
+<h4>(<%= @student.nickname %>)</h4>
+<h3>Email: <%= @student.email %></h3>
+
+<br />
+<div class="btn btn-default"><%= link_to 'Home', students_path %></div>
+
+<img src="<%= gravatar_url(@student) %>" />
