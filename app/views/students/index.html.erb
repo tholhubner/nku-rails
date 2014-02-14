@@ -27,8 +27,15 @@
                     <li><%= link_to "Home", controller: "students" %></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><%= link_to "Sign Up", new_student_path %></li>
-                  <li><%= link_to "Sign In", "signin" %></li>
+                  <% if current_student %>
+                    <p class="navbar-text current-student">
+                      Hi <%= current_student.name %>! <%= link_to "Edit your profile", profile_path %>
+                    </p>
+                    <%= link_to "Sign out", sign_out_path, class: "btn btn-default navbar-btn"%></li>
+                  <% else %>
+                    <%= link_to "Sign up", new_student_path, class: "btn btn-default navbar-btn" %>
+                    <%= link_to "Sign in", new_session_path, class: "btn btn-primary navbar-btn" %>
+                  <% end %>
                 </ul>
 						</div>
           </div>

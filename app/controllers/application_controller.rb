@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   
   ## get the information on the currently logged in student
   def current_student
-    @current_student ||= Student.find(session[:student_id]) if session[:student_id]
+    @current_student ||= Student.find(session[:student_id]) if session[:student_id].present?
   end
   helper_method :current_student
 end

@@ -5,11 +5,11 @@ NkuRails::Application.routes.draw do
   end
   
   ## routes for the Bueller Student Application
-  resources :students
+  resources :students, except: :edit
   resources :sessions
-  
-  get "signout" => "sessions#destroy", :as => "signout"
-  get "signin" => "sessions#new", :as => "signin"
+
+  get "sign_out", to: "sessions#destroy"
+  get "profile", to: "students#edit"
   
   root to: 'welcome#index'
 end
