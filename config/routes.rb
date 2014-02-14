@@ -7,6 +7,7 @@ NkuRails::Application.routes.draw do
   ## routes for the Bueller Student Application
   resources :students, except: :edit
   resources :sessions
+  resources :attendances
 
   get "sign_out", to: "sessions#destroy"
   get "profile", to: "students#edit"

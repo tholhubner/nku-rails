@@ -1,15 +1,4 @@
-<!-- Tyler Holhubner - NKU - Spring 2014 -->
-<!-- Main page, displays currently enrolled students and holds the link for sign up -->
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Bueller System</title>
-	</head>
-
-	<body>
-		<div class="container-fluid">
+<div class="container-fluid">
 			<div class="span10">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="container-fluid">
@@ -40,30 +29,41 @@
 						</div>
           </div>
 				</nav>
-			</div>
-
+			</div>    
       <div class="row-fluid">
-        <h1>Welcome to the Bueller Student System</h1>
-        <br />
-        <h3>Registered Students</h3>
-          <table class="table">
-            <tr>
-              <th>Image:</th>
-              <th>Name:</th>
-              <th>Nickname:</th>
-              <th>Email:</th>
-            </tr>
-          <% @students.each do |student| %>
-            <tr>
-              <td><%= student.imageUrl %></td>
-              <td><%= student.name %></td>
-              <td><%= student.nickname %></td>
-              <td><%= student.email %></td>
-            </tr>
+      <h1>Attendance for <%= Date.today %></h1>
+        
+        <div class="panel">
+          <div>Quadrant 1</div>
+          <ul>
+            <% @in_seat_1.each do |student| %>
+            <li><%= student.name %></li>
+            <% end %>
+          </ul>
+        </div>
+        
+        <div>Quadrant 2</div>
+        <ul>
+          <% @in_seat_2.each do |student| %>
+          <li><%= student.name %></li>
           <% end %>
-          </table>
-      </div>
-      <%= link_to "Log Attendance", attendances_path, class: "btn btn-primary navbar-btn" %>
-		</div>
-	</body>
+        </ul>
+        
+        <div>Quadrant 3</div>
+        <ul>
+          <% @in_seat_3.each do |student| %>
+          <li><%= student.name %></li>
+          <% end %>
+        </ul>
+        
+        <div>Quadrant 4</div>
+        <ul>
+          <% @in_seat_4.each do |student| %>
+          <li><%= student.name %></li>
+          <% end %>
+        </ul>
+        
+        <%= link_to "Log Attendance", new_attendance_path, class: "btn btn-primary navbar-btn" %>
+    </div>
+  </body>
 </html>
