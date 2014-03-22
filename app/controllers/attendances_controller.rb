@@ -16,7 +16,6 @@ class AttendancesController < ApplicationController
       redirect_to new_session_path
     end
     @attendance = Attendance.new
-    debugger
   end
   
   ## creates the attendance record based on the information that the student

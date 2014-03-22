@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   has_many :attendances, dependent: :destroy
+  has_many :assigments
   has_secure_password
     
   def self.in_seat(seat, date)

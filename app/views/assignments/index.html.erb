@@ -1,0 +1,16 @@
+<h3>Assignment List</h3>
+<table class="table">
+  <tr>
+    <th>Assignment:</th>
+    <th>Score/Total:</th>
+    <th>Percentage:</th>
+    <th>Go to Student:
+  </tr>
+  <% @assignment.each do |assignment| %>
+  <tr>
+    <td><%= assignment.name %></td>
+    <td><%= assignment.score %>/<%= assignment.total %></td>
+    <td><%= number_to_percentage(assignment.score / assignment.total, precision: 3) %></td>
+  </tr>
+  <% end %>
+</table>
