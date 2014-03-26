@@ -6,9 +6,9 @@
     <th>Percentage:</th>
     <th>Go to Student:
   </tr>
-  <% @assignment.each do |assignment| %>
+  <% @assignments.each do |assignment| %>
   <tr>
-    <td><%= assignment.name %></td>
+    <td><%= link_to assignment.name, assignments_path(:search => assignment.student_id) %></td>
     <td><%= assignment.score %>/<%= assignment.total %></td>
     <td><%= number_to_percentage(assignment.score / assignment.total, precision: 3) %></td>
   </tr>

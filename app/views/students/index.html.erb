@@ -14,10 +14,10 @@
   <% @students.each do |student| %>
   <tr>
     <td><%= student.imageUrl %></td>
-    <td><%= student.name %></td>
+    <td><%= link_to student.name, student %></td>
     <td><%= student.nickname %></td>
     <td><%= student.email %></td>
-    <td><%= link_to "View Grades", view_assignments_path %></td>
+    <td><%= link_to "View Grades", assignments_path %></td>
   </tr>
   <% end %>
 </table>

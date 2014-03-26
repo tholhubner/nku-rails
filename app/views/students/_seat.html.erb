@@ -1,0 +1,5 @@
+<td class="tableBorder">
+  <% @students.in_seat(seat_num, @search).each do |student| %>
+  <ul><%= student.nickname %></ul>
+  <% end %>
+</td>
