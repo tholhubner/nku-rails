@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_filter :authorize, :only => [:upload_page]
   
   def new
     @student = Student.new
@@ -26,6 +27,11 @@ class StudentsController < ApplicationController
   def update
     current_student.update_attributes!(student_params)
     redirect_to student_path, notice: 'Update was successful!'
+  end
+  
+  def upload
+    AssignmentUploader.new(params[:file])
+    redirect_to assignments_path, notice: "#{:file.size} assignments were entered! Woo!"
   end
   
   private

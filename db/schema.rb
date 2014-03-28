@@ -11,9 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321202548) do
+ActiveRecord::Schema.define(version: 20140328140618) do
 
   create_table "add_new_passes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "assignment_uploaders", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

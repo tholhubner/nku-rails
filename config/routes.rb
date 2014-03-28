@@ -1,7 +1,8 @@
 NkuRails::Application.routes.draw do
   get "students/index"
-  resources :posts do
-    resources :comments
+  
+  resources :students do
+    collection { post :upload_page }
   end
   
   ## routes for the Bueller Student Application
@@ -11,7 +12,9 @@ NkuRails::Application.routes.draw do
   resources :assignments
 
   delete "sign_out", to: "sessions#destroy"
+  get 'signin' => 'sessions#new'
   get "profile", to: "students#edit"
+  get "upload_page" => "students#upload_page", via: "post"
   
   root to: 'students#index'
 end

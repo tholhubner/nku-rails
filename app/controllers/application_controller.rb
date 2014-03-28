@@ -22,6 +22,14 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def authorize
+    unless current_student.admin_user?
+      flash[:error] = "You didn't say the magic word"
+      redirect_to root_path
+      false
+    end
+  end
+  
   before_action :require_login
   
   skip_before_action :require_login, only: [:new, :create]
