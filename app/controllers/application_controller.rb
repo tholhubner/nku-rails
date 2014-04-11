@@ -16,14 +16,6 @@ class ApplicationController < ActionController::Base
   
   def authorize
     unless current_student.admin_user?
-      flash[:error] = "Unauthorized user."
-      redirect_to root_path
-      false
-    end
-  end
-  
-  def authorize
-    unless current_student.admin_user?
       flash[:error] = "You didn't say the magic word"
       redirect_to root_path
       false

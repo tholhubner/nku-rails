@@ -1,12 +1,4 @@
 <!-- Tyler Holhubner - NKU - Spring 2014 -->
 <!-- allows the user to log their attendance for the day -->
 
-<%= form_for @attendance do |f| %>
-  <p>
-    <%= f.label :seat %><br>
-    <%= f.text_field :seat %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328140618) do
+ActiveRecord::Schema.define(version: 20140411154529) do
 
   create_table "add_new_passes", force: true do |t|
     t.datetime "created_at"
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 20140328140618) do
   end
 
   create_table "attendances", force: true do |t|
+    t.date     "attended_on"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "student_id"
     t.integer  "seat"
-    t.date     "attended_on"
-    t.string   "student_id"
   end
 
   create_table "buellers", force: true do |t|
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 20140328140618) do
     t.string   "password_hashed"
     t.string   "password"
     t.string   "password_digest"
-    t.decimal  "seat"
     t.datetime "attended_on"
     t.boolean  "admin_user"
   end
